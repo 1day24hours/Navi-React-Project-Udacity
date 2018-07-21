@@ -7,25 +7,18 @@ class App extends Component {
 
   state = {
     place:[
-      { title: '', location: { lat: , lng: } },
-      { title: '', location: { lat: , lng: } }
-      { title: '', location: { lat: , lng: } }
-      { title: '', location: { lat: , lng: } }
-      { title: '', location: { lat: , lng: } }
+      { title: 'Home', location: { lat: -36.798376, lng: 174.73672 } },
+      { title: 'Northcote Baptist Church', location: { lat: , lng: } },
+      { title: 'Auckland Zoo', location: { lat: 36.864113, , lng: 174.719685 } },
+      { title: 'OP Shop', location: { lat: 36.799787, lng: 174.747666 } },
+      { title: 'Auckland City Backpackers', location: { lat: 36.856863, lng: 174.762632} }
     ]
   }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+
       </div>
-    );
   }
 }
 export default App;
