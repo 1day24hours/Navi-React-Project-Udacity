@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './style.css';
+// ref :https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/#
 
 class App extends Component {
+
+  state = {
+    place:[
+      { title: '', location: { lat: , lng: } },
+      { title: '', location: { lat: , lng: } }
+      { title: '', location: { lat: , lng: } }
+      { title: '', location: { lat: , lng: } }
+      { title: '', location: { lat: , lng: } }
+    ]
+  }
   render() {
     return (
       <div className="App">

@@ -1,4 +1,4 @@
-// Before we jump into building our Map component, 
+// 1st,Before we jump into building our Map component, 
 // let's build our container component to demonstrate usage as well as be responsible for loading the Google Api
 import React from 'react';
 import './style.css';
