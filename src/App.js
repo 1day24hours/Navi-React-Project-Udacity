@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './style.css';
+import { Container } from './Container';
 // ref :https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/#
 
 class App extends Component {
@@ -17,7 +18,17 @@ class App extends Component {
   render() {
     return (
       <div>
-
+        <div id='search'>
+          <h1>Auckland Locations</h1>
+          <input type='text' placeholder='Search your place...' />
+          <input type='button' value='Filter' />
+          {/* show the map */}
+          <Container />
+          {/* show the list */}
+          <List 
+            place={this.state.place}
+          />
+        </div>
       </div>
   }
 }
