@@ -17,6 +17,6 @@ export class Container extends React.Component {
     }
 }
 
-export default GoogleApiComponent({
+export default Container({
     apiKey:'AIzaSyCfdB53Ke2w9uJRVoxmj0HNrzVa0WNW84o'
 })(Container);//Container作为GoogleApiWrapper的子组件传入

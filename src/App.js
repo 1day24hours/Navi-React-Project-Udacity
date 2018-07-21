@@ -26,7 +26,7 @@ class App extends Component {
           <Container />
           {/* show the list */}
           <List 
-            place={this.state.place}
+            places={this.state.place}
           />
         </div>
       </div>

@@ -23,3 +23,21 @@ h1 {
   bottom: 0px;
   left: 250px;
 }
+
+.list {
+  list-style: none;
+  padding: 0px;
+}
+
+.title {
+  color: aliceblue;
+  font-size: 12px;
+  padding: 0px 0px 20px 20px;
+}
+
+input {
+  height: 25px;
+  border-radius: 5px;
+  font-size: 15px;
+  margin: 0px 10px 10px 10px;
+}
