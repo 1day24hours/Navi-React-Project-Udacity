@@ -10,7 +10,9 @@ export class Container extends React.Component {
             return <div>Loding...</div>
         }
         return(
-            <div>Map will go here.</div>
+            <div className='map'>
+                <Map google={this.props.google} />
+            </div>
         )
     }
 }
