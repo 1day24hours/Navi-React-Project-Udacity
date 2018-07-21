@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './style.css';
 import List from './List';
-import { Container } from './Container';
+import GoogleApiComponent from './Container'
 // ref :https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/#
 
 class App extends Component {
@@ -23,7 +23,7 @@ class App extends Component {
           <input type='text' placeholder='Search your place...' />
           <input type='button' value='Filter' />
           {/* show the map */}
-          <Container />
+          <GoogleApiComponent />
           {/* show the list */}
           <List 
             places={this.state.place}

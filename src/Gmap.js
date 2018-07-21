@@ -2,21 +2,21 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import './style.css';
 
-class Map extends React.Component {
+class Gmap extends React.Component {
 
-    Map.propTypes = {
-        google: React.PropTypes.object,
-        zoom: React.PropTypes.number,
-        initialCenter: React.PropTypes.object
-    }
-    Map.defaultProps = {
-        zoom: 13,
-        // Auckland, by default
-        initialCenter: {
-            lat: -36.84846,
-            lng: 174.763332
-        }
-    }
+    // Map.propTypes = {
+    //     google: React.PropTypes.object,
+    //     zoom: React.PropTypes.number,
+    //     initialCenter: React.PropTypes.object
+    // }
+    // Map.defaultProps = {
+    //     zoom: 13,
+    //     // Auckland, by default
+    //     initialCenter: {
+    //         lat: -36.84846,
+    //         lng: 174.763332
+    //     }
+    // }
 
     componentDidMount() {
         this.loadMap();
@@ -54,4 +54,4 @@ class Map extends React.Component {
     }
 }
 
-export default Map;
+export default Gmap;
