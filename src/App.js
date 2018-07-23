@@ -15,6 +15,7 @@ class App extends Component {
       { title: 'Auckland City Backpackers', location: { lat: -36.856863, lng: 174.762632} }
     ]
   }
+  
   render() {
     return (
       <div>
