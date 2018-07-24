@@ -10,6 +10,7 @@ h1 {
   font-size: 22px;
   margin: 0 0 10px 0;
   text-align: center;
+  position: relative;
 }
 
 #search {
@@ -23,19 +24,22 @@ h1 {
   position: absolute;
   height: 100%;
   bottom: 0px;
-  left: 250px;
   right: 0px;
+  width: 100%;
+  margin-left: 200px;
 }
 
 .list {
   list-style: none;
   padding: 0px;
+  position: relative;
 }
 
 .title {
   color: aliceblue;
   font-size: 12px;
   padding: 0 0 20px 20px;
+  position: relative;
 }
 
 input {
@@ -43,4 +47,5 @@ input {
   border-radius: 5px;
   font-size: 15px;
   margin: 0 10px 10px 0;
+  position: relative;
 }

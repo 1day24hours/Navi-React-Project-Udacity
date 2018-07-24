@@ -7,7 +7,7 @@ class List extends React.Component {
             <ul className='list'>
                 {this.props.places.map((place) => (
                     <li className='title'>
-                        {this.title}
+                        {place.title}
                     </li>
                 ))}
             </ul>

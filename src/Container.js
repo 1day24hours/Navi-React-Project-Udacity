@@ -3,9 +3,11 @@
 import React from 'react';
 import './style.css';
 import Gmap from './Gmap';
-import { GoogleApiWrapper } from 'google-maps-react';
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+
 
 export class Container extends React.Component {
+    
     render() {
         if(!this.props.loaded) {
             return <div>Loding...</div>
@@ -14,6 +16,7 @@ export class Container extends React.Component {
             <div className='map'>
                 <Gmap google={this.props.google} />
             </div>
+            
         )
     }
 }
