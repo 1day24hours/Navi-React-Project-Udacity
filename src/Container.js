@@ -44,7 +44,7 @@ export class Container extends React.Component {
             //     // bounds={bounds}
             //     >
             //   <Marker />
-            </Map>
+            // </Map>
         )
     }
 }
