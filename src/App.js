@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './style.css';
 import List from './List';
 import GoogleApiComponent from './Container'
+import PropTypes from 'prop-types';
 // ref :https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/#
 
 class App extends Component {
@@ -16,13 +17,11 @@ class App extends Component {
     ]
   }
   
+  
   render() {
     return (
-      <div>
+
         <div id='search'>
-          <h1>Auckland Locations</h1>
-          <input type='text' placeholder='Search your place...' />
-          <input type='button' value='Filter' />
           {/* show the map */}
           <GoogleApiComponent />
           {/* show the list */}
@@ -30,7 +29,6 @@ class App extends Component {
             places={this.state.place}
           />
         </div>
-      </div>
     )
   }
 }

@@ -17,6 +17,7 @@ h1 {
   text-align: center;
   color: #cccccc;
   width: 25%;
+  height: 100%;
   position: relative;
 }
 
@@ -25,6 +26,7 @@ h1 {
   height: 100%;
   bottom: 0px;
   right: 0px;
+  left: 250px;
   width: 100%;
   margin-left: 200px;
 }
@@ -48,4 +50,8 @@ input {
   font-size: 15px;
   margin: 0 10px 10px 0;
   position: relative;
+}
+
+*root {
+  height: 100%;
 }
