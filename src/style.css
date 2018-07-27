@@ -21,16 +21,6 @@ h1 {
   position: relative;
 }
 
-.map {
-  position: absolute;
-  height: 100%;
-  bottom: 0px;
-  right: 0px;
-  left: 250px;
-  width: 100%;
-  margin-left: 200px;
-}
-
 .list {
   list-style: none;
   padding: 0px;
@@ -52,6 +42,18 @@ input {
   position: relative;
 }
 
-*root {
+#root,
+html,
+#container {
   height: 100%;
+  /* width: 100%; */
+}
+
+#container>div {
+  position: absolute;
+  height: 100%;
+  bottom: 0px;
+  right: 0px;
+  left: 350px;
+  width: 100%;
 }

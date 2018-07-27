@@ -33,7 +33,7 @@ class Gmap extends React.Component {
     }
     render() {
         return(
-            <div ref='googlemap'>
+            <div ref='googlemap' style={{width:'100%',height:'100%'}}>
                 Loading Map...
             </div>
         )
