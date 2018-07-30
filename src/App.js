@@ -14,9 +14,13 @@ class App extends Component {
       { title: 'Auckland Zoo', location: { lat: -36.864113, lng: 174.719685 } },
       { title: 'OP Shop', location: { lat: -36.799787, lng: 174.747666 } },
       { title: 'Auckland City Backpackers', location: { lat: -36.856863, lng: 174.762632} }
-    ]
+    ],
+    clickedItem:null
   }
   
+  onClickItem = (item) => {
+    this.setState({clickedItem:item})
+  }
   
   render() {
     return (
@@ -27,6 +31,7 @@ class App extends Component {
           {/* show the list */}
           <List 
             places={this.state.place}
+            onClickItem ={this.onClickItem}
           />
         </div>
     )

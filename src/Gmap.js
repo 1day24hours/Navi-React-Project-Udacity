@@ -11,7 +11,7 @@ class Gmap extends React.Component {
     loadMap() {
         if (this.props && this.props.google) {
             // google is available
-            const { google } = this.props;
+            const { google,places } = this.props;
             const maps = google.maps;
 
             //grab a reference to the DOM component where we want the map to be placed
@@ -28,6 +28,21 @@ class Gmap extends React.Component {
                 zoom: zoom
             })
             this.map = new maps.Map(node, mapConfig);
+
+            // infowindow
+            this.infoWindow = new maps.InfoWindow();
+            //markers
+            places.map(place => {
+                let marker = new google.maps.marker({
+                    map: this.map,
+                    position: place.location
+                })
+                marker.title = place.title;
+                marker.addListerner('click', evt => {
+                    this.infoWindow.setContent(place.title);
+                    this.infoWindow.open(this.map,marker);
+                })
+            })
         }
 
     }
