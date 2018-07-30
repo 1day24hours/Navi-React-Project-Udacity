@@ -21,9 +21,9 @@ class App extends Component {
   render() {
     return (
 
-        <div id='search'>
+        <div id='container'>
           {/* show the map */}
-          <GoogleApiComponent />
+          <GoogleApiComponent places={this.state.place}/>
           {/* show the list */}
           <List 
             places={this.state.place}
