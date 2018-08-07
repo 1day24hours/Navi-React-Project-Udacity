@@ -3,6 +3,13 @@ import ReactDom from 'react-dom';
 import './style.css';
 
 class Gmap extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            // infowindow:'',
+            premarker:''
+        }
+    }
 
     componentDidMount() {
         this.loadMap();
@@ -47,6 +54,19 @@ class Gmap extends React.Component {
 
     }
 
+/**
+   * Open the infowindow for the marker
+   * @param {object} location marker
+   */
+  openInforWindow(marker){
+   this.closeInfoWindow();
+   this.state.infowindow.open(this.state.map, marker);
+   marker.setAnimation(window.google.maps.Animation.BOUNCE);//bouce effect
+   this.setState({
+        premarker: this.marker
+    });
+    this.state.infowindow.setContent('Loading data...');
+  }
     /**
    * Retrive the location data from the foursquare api
    */
@@ -100,6 +120,16 @@ class Gmap extends React.Component {
         });
   }
 
+// Close the info window previously opened
+  closeInfoWindow(){
+    if(this.state.premarker) {
+        this.state.infowindow.setAnimation(null);//setAnimation(animation:Animation)
+    }
+    this.setState({
+        premarker: ''
+    });
+    this.state.infowindow.close();
+  }
     render() {
         return(
             <div ref='googlemap' style={{width:'100%',height:'100%'}}>

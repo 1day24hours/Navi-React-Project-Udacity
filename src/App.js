@@ -6,8 +6,10 @@ import GoogleApiComponent from './Container'
 
 class App extends Component {
 
-  state = {
-    place:[
+  constructor(props){
+    super(props);
+    this.state = {
+      place:[
       { title: 'Home', location: { lat: -36.798376, lng: 174.73672 } },
       { title: 'Northcote Baptist Church', location: { lat: -36.795293, lng: 174.735701 } },
       { title: 'Auckland Zoo', location: { lat: -36.864113, lng: 174.719685 } },
@@ -15,6 +17,7 @@ class App extends Component {
       { title: 'Auckland City Backpackers', location: { lat: -36.856863, lng: 174.762632} }
     ],
     clickedItem:null
+    }
   }
   
   onClickItem = (item) => {
@@ -26,7 +29,10 @@ class App extends Component {
 
         <div id='container'>
           {/* show the map */}
-          <GoogleApiComponent places={this.state.place}/>
+          <GoogleApiComponent 
+            places={this.state.place} 
+            clickedItem={this.state.clickedItem}
+          />
           {/* show the list */}
           <List 
             places={this.state.place}
