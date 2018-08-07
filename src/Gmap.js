@@ -46,6 +46,60 @@ class Gmap extends React.Component {
         }
 
     }
+
+    /**
+   * Retrive the location data from the foursquare api
+   */
+  getMakerInfo(marker) {
+
+    // Add the api keys for foursquare
+    const clientId = 'HNWME22DACZBRE3XCHEPDICRSCBQWCN4LSK3FRPO0VHEFFED';
+    const clientSecret = '0DUHNOBRKVA0AW0PHJK4AE40L02UIWEGOOIVWJW3FS1VCAPR';
+   
+    // Build the api endpoint
+    const url = 
+        'https://api.foursquare.com/v2/venues/search?client_id=' +
+        clientId +
+        '&client_secret' +
+        clientSecret +
+        '&v=20130815&ll=' +
+        marker.getPosition().lat() +
+        ',' + 
+        marker.getPosition().lng() +
+        'limit=1';
+    fetch(url)
+        .then(response => {
+            if(response.status !==200) {
+                this.state.infoWindow.setContent('Sorry data can\'t be loaded');
+                return;
+            }
+            response.this.state.place.then(data =>{
+                console.log(data);
+
+                const location_data = data.venues[0];
+                const place = `<h3>${location_data.name}</h3>`;
+                const street = `<p>${location_data.formattedAddress[0]}</p>`;
+                const contact = '';
+                if (location_data.contact.phone) {
+                    contact= `<p>${location_data.contact.phone}</p>`;
+                }
+                const checkInCount = 
+                    '<b>Number of CheckIn: </b>' +
+                    location_data.stats.checkinsCount +
+                    '<br>';
+                const readMore = 
+                    '<a href="https://foursquare.com/v/' +
+                    location_data.id +
+                    '" target="_blank">Read More on <b>Foursquare Website</b></a>';
+                    this.state.infoWindow.setContent(
+                        place + street + checkInCount +readMore
+                    );
+            });
+        }) .catch(err=> {
+            this.state.infoWindow.setContent('Sorry data can\'t be loaded.');
+        });
+  }
+
     render() {
         return(
             <div ref='googlemap' style={{width:'100%',height:'100%'}}>

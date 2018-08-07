@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './style.css';
 import List from './List';
 import GoogleApiComponent from './Container'
-import PropTypes from 'prop-types';
 // ref :https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/#
 
 class App extends Component {
