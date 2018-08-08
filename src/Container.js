@@ -20,7 +20,10 @@ export class Container extends React.Component {
         }
         return(
             <div id='container'>
-                <Gmap google={this.props.google} />
+                <Gmap 
+                google={this.props.google} 
+                places={this.props.place} 
+                />
             </div>  
         )
     }

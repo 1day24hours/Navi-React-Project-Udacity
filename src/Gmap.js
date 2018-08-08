@@ -40,18 +40,17 @@ class Gmap extends React.Component {
             this.infoWindow = new maps.InfoWindow();
             //markers
             places.map(place => {
-                let marker = new google.maps.marker({
+                let marker = new maps.Marker({
                     map: this.map,
                     position: place.location
                 })
                 marker.title = place.title;
-                marker.addListerner('click', evt => {
+                marker.addListener('click', evt => {
                     this.infoWindow.setContent(place.title);
                     this.infoWindow.open(this.map,marker);
                 })
             })
         }
-
     }
 
 /**
@@ -99,7 +98,7 @@ class Gmap extends React.Component {
                 const location_data = data.venues[0];
                 const place = `<h3>${location_data.name}</h3>`;
                 const street = `<p>${location_data.formattedAddress[0]}</p>`;
-                const contact = '';
+                let contact = '';
                 if (location_data.contact.phone) {
                     contact= `<p>${location_data.contact.phone}</p>`;
                 }
